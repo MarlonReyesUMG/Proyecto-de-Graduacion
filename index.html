@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Escaneaste un QR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Layout: una sola columna tipo alerta de seguridad; el golpe está arriba, los hábitos debajo. Tema único oscuro, deliberado. */
+:root{
+  --bg:#0B1F3A; --panel:#132E52; --line:#24476F; --fg:#EEF3F8; --muted:#A9BACB;
+  --warn:#F4A261; --ok:#5FD0BF; --danger:#E63946;
+  --display:'Source Serif 4', Georgia, serif;
+  --body:'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  color-scheme:dark;
+}
+html,body{background:var(--bg);color:var(--fg)}
+body{margin:0;font-family:var(--body);font-size:17px;line-height:1.5;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:28px 40px}
+main{max-width:620px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+.alert{display:flex;flex-direction:column;gap:14px;padding:22px;border:2px solid var(--warn);border-radius:10px;background:var(--panel)}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--warn)}
+h1{margin:0;font-family:var(--display);font-size:clamp(30px,8vw,44px);line-height:1.08;text-wrap:balance}
+h2{margin:0;font-family:var(--display);font-size:22px;line-height:1.2;text-wrap:balance}
+p{margin:0}
+.calm{color:var(--ok);font-weight:600}
+.url{font-family:var(--mono);font-size:14px;color:var(--muted);overflow-wrap:anywhere}
+.thesis{font-family:var(--display);font-size:clamp(22px,5.5vw,28px);line-height:1.25;text-wrap:balance}
+.thesis strong{color:var(--warn)}
+section{display:flex;flex-direction:column;gap:12px}
+ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;padding:12px 14px;background:var(--panel);border-radius:8px}
+li b{display:block}
+.risk li{border-left:3px solid var(--danger)}
+.habit li{border-left:3px solid var(--ok)}
+.n{font-family:var(--mono);color:var(--muted);font-size:14px;padding-top:2px}
+.team{display:flex;flex-direction:column;gap:8px;padding:16px 18px;border-left:3px solid var(--warn);background:var(--panel);border-radius:8px}
+footer{padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+</style>
+</head>
+<body>
+
+<main>
+  <div class="alert" role="alert">
+    <p class="tag">Ejercicio de concientización</p>
+    <h1>Escaneaste un código QR sin saber a dónde te llevaba.</h1>
+    <p class="calm">Tranquilo: esta página no guarda ningún dato y no pasó nada.</p>
+    <p>Pero si este código lo hubiera puesto un atacante, ya estarías en su sitio.</p>
+  </div>
+
+  <p class="thesis">La primera línea de la ciberseguridad no es la tecnología: <strong>son las personas.</strong></p>
+
+  <div class="team">
+    <p class="tag">En tu trabajo</p>
+    <p>Tu seguridad, y la de la empresa donde trabajas, depende de la precaución de cada colaborador. Un solo clic en el enlace equivocado puede abrirle la puerta a un atacante hacia toda la organización: sus sistemas, sus clientes y su dinero.</p>
+  </div>
+
+  <section class="risk">
+    <h2>Lo que un QR falso pudo hacer</h2>
+    <ul>
+      <li><span class="n">01</span><p><b>Llevarte a una copia de tu banco</b>Una página idéntica que pide tu usuario, contraseña o código de verificación.</p></li>
+      <li><span class="n">02</span><p><b>Instalar una aplicación maliciosa</b>Una descarga que lee tus mensajes o tus datos bancarios.</p></li>
+      <li><span class="n">03</span><p><b>Cobrarte o suscribirte</b>Un formulario de pago que parece de un parqueo, un restaurante o una multa.</p></li>
+    </ul>
+    <p class="url">A este ataque se le llama quishing: phishing por medio de un código QR.</p>
+  </section>
+
+  <section class="habit">
+    <h2>Cuatro hábitos que te protegen</h2>
+    <ul>
+      <li><span class="n">01</span><p><b>Mira la dirección antes de abrir</b>Tu cámara muestra el enlace. Si no reconoces el dominio, no entres.</p></li>
+      <li><span class="n">02</span><p><b>Nunca escribas contraseñas desde un QR</b>Entra a tu banco o servicio escribiendo tú mismo la dirección o desde su aplicación oficial.</p></li>
+      <li><span class="n">03</span><p><b>Desconfía de un QR pegado encima de otro</b>En parqueos, mesas y carteles, los atacantes cubren el código original con el suyo.</p></li>
+      <li><span class="n">04</span><p><b>Activa la verificación en dos pasos</b>Si alguien obtiene tu contraseña, todavía le falta tu segundo factor.</p></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>Actividad del trabajo de graduación «Análisis comparativo del Decreto 39-2022 y la Iniciativa de Ley 6347 en materia de ciberseguridad».</p>
+    <p>Marlon Julian Reyes Vargas · Ingeniería en Sistemas · Universidad Mariano Gálvez de Guatemala · 2026</p>
+  </footer>
+</main>
+
+</body>
+</html>
